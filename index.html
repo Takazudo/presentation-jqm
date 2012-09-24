@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		<title>OOCSS + Sass</title>
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="lib/zenburn.css">
+		<script src="lib/jquery.min.js"></script>
+		<script src="js/misc.js"></script>
+	</head>
+	
+	<body>
+		
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div id="main">
+
+			<section>
+				<div class="mod-page title"><div><div>
+					<h1>jQuery mobileで<br>Transitions<br>だけ使う</h1>
+					<p>Takeshi Takatsudo (<a href="http://twitter.com/Takazudo">@Takazudo</a>)</p>
+				</div></div></div>
+			</section>
+			
+			<section>
+				<section>
+					<div class="mod-page plain"><div><div>
+						<h1>jQuery Mobile 便利</h1>
+						<ul>
+						<li>なんか手軽にすごいの作れる</li>
+						<li>ブラウザ互換とかはjQuery mobileが頑張る</li>
+						<li>素敵な見栄えもサクサクできちゃう</li>
+						<li>テーマも選べちゃう</li>
+						<li>pushStateで遷移してくれちゃう</li>
+						<li>hashchangeで遷移もできちゃう</li>
+						</ul>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain"><div><div>
+						<h1>やってみる</h1>
+						<p>読み込む</p>
+<pre style="font-size:.6em">&lt;link rel=&quot;stylesheet&quot;
+href=&quot;http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css&quot; /&gt;
+&lt;script src=&quot;http://code.jquery.com/mobile/1.1.1/
+jquery.mobile-1.1.1.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;div data-role=&quot;page&quot;&gt;
+    &lt;div data-role=&quot;header&quot; data-position=&quot;fixed&quot;&gt;
+    ...
+    &lt;/div&gt;
+    &lt;div data-role=&quot;content&quot; id=&quot;main&quot;&gt;
+    ...
+    &lt;/div&gt;
+    &lt;div data-role=&quot;footer&quot; class=&quot;footer-docs&quot; data-theme=&quot;a&quot;&gt;
+    ...
+    &lt;/div&gt;
+&lt;/div&gt;&lt;!-- /page --&gt;
+</pre>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain"><div><div>
+						<h1>素敵な見栄え</h1>
+
+<p>ボタン</p>
+
+<pre>&lt;a id=&quot;header-home&quot;
+href=&quot;http://example.com&quot;
+data-icon=&quot;home&quot;
+data-iconpos=&quot;notext&quot;&gt;Home&lt;/a&gt;
+</pre>
+
+<p>listviewとかいうやつ</p>
+
+<pre>&lt;ul data-role=&quot;listview&quot;&gt;
+    &lt;li data-role=&quot;list-divider&quot;&gt;見出し&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://example.com&quot;&gt;アイテム&lt;/a&gt;&lt;/li&gt;
+    ...
+&lt;/ul&gt;
+</pre>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain c"><div><div>
+						<h1>結果</h1>
+						<iframe src="http://jsfiddle.net/Takazudo/8Bm7s/show/" style="width:400px; margin:0 auto; height:500px"></iframe>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain"><div><div>
+						<h1>pushstate (<a href="http://takazudo.github.com/jquerymobiletest/pushstate/" target="_blank">link</a>)</h1>
+						<iframe src="http://takazudo.github.com/jquerymobiletest/pushstate/" style="width:400px; margin:0 0 20px 20px; height:500px; float:right"></iframe>
+
+<p>フツーのリンクが全部pushstateになる。飛び先の div[data-role=page] を取ってくる</p>
+
+<pre style="width:500px">&lt;a href=&quot;2.html&quot;&gt;to 2.html!&lt;/a&gt;</pre>
+<pre style="width:500px">&lt;a href=&quot;index.html&quot; data-rel=&quot;back&quot;&gt;back&lt;/a&gt;</pre>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain"><div><div>
+						<h1>transitions slide (<a href="http://takazudo.github.com/jquerymobiletest/transitions-slide/" target="_blank">link</a>)</h1>
+
+						<iframe src="http://takazudo.github.com/jquerymobiletest/transitions-slide/" style="width:400px; margin:0 0 20px 20px; height:500px; float:right"></iframe>
+<p>遷移時のアニメーション指定。色々ある</p>
+<pre style="width:500px">&lt;a href=&quot;2.html&quot; data-transition=&quot;slide&quot;&gt;to 2.html!&lt;/a&gt;</pre>
+<pre style="width:500px">&lt;a href=&quot;index.html&quot; data-rel=&quot;back&quot;&gt;back&lt;/a&gt;</pre>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain"><div><div>
+						<h1>accordion (<a href="http://takazudo.github.com/jquerymobiletest/accordion/" target="_blank">link</a>)</h1>
+						<iframe src="http://takazudo.github.com/jquerymobiletest/accordion/" style="width:400px; margin:0 0 20px 20px; height:500px; float:right"></iframe>
+<p>アコーディオン</p>
+<pre style="width:500px;font-size:.6em">&lt;div data-role=&quot;collapsible-set&quot;&gt;
+  &lt;div data-role=&quot;collapsible&quot;&gt;
+    &lt;h3&gt;Section 1&lt;/h3&gt;
+    &lt;p&gt;...&lt;/p&gt;
+  &lt;/div&gt;
+  ...
+&lt;/div&gt;
+</pre>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain c"><div><div>
+						<h1>Hey, wait!</h1>
+						<p>あの…
+						そんなに機能いらないんですけど&#8230;</p>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain c"><div><div>
+						<h1>必要なのだけ入れて使おう</h1>
+						<p>Download builder<br/>
+						<a href="http://jquerymobile.com/download-builder/">http://jquerymobile.com/download-builder/</a></p>
+
+						<p>いるものだけ入れれば不要な機能が適用されずすっきり</p>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain"><div><div>
+						<h1>Components - Core</h1>
+<ul style="font-size:.65em">
+<li>Core（必須）<br/>
+Base file for jQuery Mobile</li>
+<li>Events（必須）<br/>
+Custom events and shortcuts.</li>
+<li>Init（必須じゃないけど大体必要）<br/>
+Global initialization of the library.</li>
+<li>Page Creation（必須じゃないけど大体必要）<br/>
+Basic page definition and formatting.</li>
+<li>Page Sections<br/>
+Theming and layout of headers, footers, and content areas</li>
+<li>Support Tests（必須）<br/>
+Assorted tests to qualify browsers by detecting features</li>
+<li>Virtual Mouse (vmouse) Bindings（必須）<br/>
+Normalizes touch/mouse events.</li>
+<li>Widget Factory（必須）<br/>
+Widget factory extentions for mobile.</li>
+</ul>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain"><div><div>
+						<h1>Components - Forms</h1>
+<ul style="font-size:.55em">
+<li>Buttons: Link-based<br/>
+Applies button styling to links</li>
+<li>Controlgroups<br/>
+Visually groups sets of buttons, checks, radios, etc.</li>
+<li>Fieldcontainers<br/>
+Styling to responsively position forms and labels based on screen width and add visual separation</li>
+<li>Buttons: Input or button-based<br/>
+Custom-styled native input/buttons</li>
+<li>Checkboxes &amp; Radio Buttons<br/>
+Consistent styling for checkboxes/radio buttons.</li>
+<li>Selects<br/>
+Consistent styling for native select menus. Tapping opens a native select menu.</li>
+<li>Selects: Custom menus<br/>
+Extension to select menus to support menu styling, placeholder options, and multi-select features.</li>
+<li>Slider<br/>
+Slider form widget</li>
+<li>Text Inputs &amp; Textareas<br/>
+Enhances and consistently styles text inputs.</li>
+</ul>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain"><div><div>
+						<h1>Components - Navigation</h1>
+<ul>
+<li>Hashchange<br/>
+Hashchange event management for AJAX navigation system</li>
+<li>AJAX Navigation System<br/>
+Applies the AJAX navigation system to links and forms to enable page transitions</li>
+<li>Pushstate Support<br/>
+history.pushState support, layered on top of hashchange.</li>
+</ul>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain"><div><div>
+						<h1>Components - Transitions</h1>
+<ul style="font-size:.9em">
+<li>Transition Core<br/>
+Animated page change core logic and sequence handlers</li>
+<li>Flip Transition</li>
+<li>Flow Transition</li>
+<li>Pop Transition</li>
+<li>Slide Transition</li>
+<li>Slidedown Transition</li>
+<li>Slidefade Transition</li>
+<li>Slideup Transition</li>
+<li>Turn Transition</li>
+</ul>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain"><div><div>
+						<h1>Components - Utilities</h1>
+<ul style="font-size:.7em">
+<li>Degrade Inputs<br/>
+Changes input type to another after custom enhancements are made (ex. range &gt; numberic).</li>
+<li>Link Classes<br/>
+Adds classes to links.</li>
+<li>matchMedia Polyfill<br/>
+A workaround for browsers without window.matchMedia</li>
+<li>“nojs” Classes<br/>
+Adds class to make elements hidden to A grade browsers</li>
+<li>Zoom Handling<br/>
+Utility methods for enabling and disabling user scaling (pinch zoom)</li>
+<li>iOS Orientation Change Fix<br/>
+Fixes the orientation change bug in iOS when switching between landspace and portrait</li>
+</ul>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain"><div><div>
+						<h1>Widgets</h1>
+<ul style="font-size:.65em">
+<li>Collapsible<br/>
+Creates collapsible content blocks.</li>
+<li>Collapsible Sets (Accordions)<br/>
+For creating grouped collapsible content areas.</li>
+<li>Dialogs<br/>
+Displays a page as a modal dialog with inset appearance and overlay background</li>
+<li>Toolbars: Fixed<br/>
+Behavior for &#8220;fixed&#8221; headers and footers</li>
+<li>Grid Layouts (Columns)<br/>
+Applies classes for creating grid or column styling.</li>
+<li>Listview<br/>
+Applies listview styling of various types (standard, numbered, split button, etc.)</li>
+<li>Listview: Filter<br/>
+Extends the listview to add a search box to filter lists</li>
+<li>Navbars<br/>
+Formats groups of links as horizontal navigation bars.</li>
+</ul>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain"><div><div>
+						<h1>OK大体わかった</h1>
+<p>いるのだっけ選んで使う<br/>
+例: Transitionsだけ使いたい</p>
+
+<p>✔ Init（コアで必要）<br/>
+✔ Page Creation（コアで必要）<br/>
+✔ Hashchange（トランジションに必要）<br/>
+✔ AJAX Navigation System（トランジションに必要）<br/>
+✔ Pushstate Support（Initが依存）<br/>
+✔ Transition Core（トランジションのコア）<br/>
+✔ Slide Transition</p>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain"><div><div>
+						<h1>JavaScript</h1>
+<pre>&lt;script&gt;
+  // hashだったらhashナシにリダイレクト
+  if(location.hash !== '') {
+    location.href = location.href.replace(/#.*/,'');
+  }
+  // pushstateとajaxは使わない
+  $.mobile.pushStateEnabled = false;
+  $.mobile.ajaxEnabled = false;
+&lt;/script&gt;
+</pre>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain"><div><div>
+						<h1>HTML</h1>
+<pre>&lt;div data-role=&quot;page&quot; id=&quot;main&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;#over&quot;
+data-transition=&quot;slide&quot;&gt;OPEN!!&lt;/a&gt;&lt;/p&gt;
+...
+&lt;/div&gt;&lt;!-- /page --&gt;
+
+&lt;div data-role=&quot;page&quot; id=&quot;over&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;#main&quot;
+data-transition=&quot;slide&quot;
+data-rel=&quot;back&quot;&gt;back&lt;/a&gt;&lt;/p&gt;
+...
+&lt;/div&gt;&lt;!-- /page --&gt;
+</pre>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain c"><div><div>
+						<h1>結果こんなの</h1>
+						<p><a href="http://takazudo.github.com/jquerymobiletest/custombuild-transition/">link</a></p>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain c"><div><div>
+						<h1>まとめ</h1>
+						<p>必要なのだけ選んで使えば結構使いドコロあるかも</p>
+						<p>でもjQuery mobileの基本設計は掴んでおく必要あり</p>
+					</div></div></div>
+				</section>
+			</section>
+
+		</div>
+
+		<div class="mod-timer">999</div>
+		
+		<aside class="controls">
+			<a class="left" href="#">&#x25C4;</a>
+			<a class="right" href="#">&#x25BA;</a>
+			<a class="up" href="#">&#x25B2;</a>
+			<a class="down" href="#">&#x25BC;</a>
+		</aside>
+
+		<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+		<div class="progress"><span></span></div>
+		
+		<script src="js/reveal.js"></script>
+		<script src="lib/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				// Display controls in the bottom right corner
+				controls: true,
+
+				// Display a presentation progress bar
+				progress: true,
+
+				// Apply a 3D roll to links on hover
+				rollingLinks: true,
+
+				// Styling themes, only affects transitions for now
+				theme: 'default' // default/concave/linear
+			});
+
+			hljs.initHighlightingOnLoad();
+		</script>
+
+
+	</body>
+</html>
